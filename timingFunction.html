@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timing Function</title>
+     <script>
+      /* (setTimeout() and clearTimeout() Methods)
+
+        var ID = 0;
+        function printMsg(){
+        document.getElementById("op").innerHTML="5 second have passed"
+            
+        }
+
+        function start(){
+            // execute statement once after an interval
+           ID = window.setTimeout(printMsg,5000)
+        }
+
+        function stop(){
+            // clears a timer set with the setTimeout()method
+            window.clearTimeout(ID)
+        } 
+    */
+
+     // (setInterval() and clearInterval() Methods)
+      
+        var ID = 0;
+        var seconds = 0;
+
+        function printMsg(){
+        document.getElementById("op").innerHTML=seconds+" seconds";     
+        seconds++;    
+    }
+
+        function start(){
+            // execute statement repeatedly after an interval
+           ID = window.setInterval(printMsg,1000)
+        }
+
+        function stop(){
+            // clears a timer set with the ClearInterval()method
+            window.clearInterval(ID)
+        } 
+
+     </script>
+
+</head>
+<body>
+   <button onclick="start()" id="btnAdd">Start</button> 
+   <h2 id="op">Some Text</h2>
+   <button onclick="stop()" id="btnStop">Stop</button>
+
+</body>
+</html>
