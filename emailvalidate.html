@@ -1,0 +1,44 @@
+<html>
+    <head>
+     <title>Document</title>
+      <script type="text/javascript">
+        /*
+           \d(digit) - match any digit (equal to [0-9])
+           \w(words) - match any word character (a-z A-Z 0-9 & _)
+           \s(Space) - match whitespace and tabs
+           \t(Tabs) - match a tab only 
+        */
+        function validate(){
+            var text = document.getElementById("text1").value;
+           
+            // ^ Represent we can't add any char or value before 7-9
+            // $ Represent end of the string
+            // ? Represent last part is opational
+        
+            var regx = /^([a-z 0-9\.-]+)@([a-z 0-9-]+).([a-z]{2,8})(.[a-z]{2,8})?$/; 
+            
+            if(regx.test(text)){
+                document.getElementById("lbtext").innerHTML="Valid";
+                document.getElementById("lbtext").style.visibility="visible";
+                document.getElementById("lbtext").style.color="green";
+
+            }
+
+            else{
+                document.getElementById("lbtext").innerHTML="Invalid";
+                document.getElementById("lbtext").style.visibility="visible";
+                document.getElementById("lbtext").style.color="red"; 
+            }
+        }
+    </script>
+</head>
+<body>
+   <form>
+        <input id="text1" placeholder="Enter Your Email" type="text">
+         <br>
+         <label id="lbtext" style="color: red;visibility:hidden">Invalid</label>
+         <br>
+        <button onclick="validate()" type="button">Submit</button>
+    </form>
+</body>
+</html>
